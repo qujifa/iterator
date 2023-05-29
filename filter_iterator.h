@@ -72,7 +72,7 @@ public:
     };
 
     // provide a filter function, by default, iterator will traverse all items
-    void setFilter(std::function<bool(const T&)> f) { d_function = f; }
+    void setFilter(std::function<bool(const T&)> f = [](const T& val) {return true;}) { d_function = f; }
 
     // iterator begin
     Iterator begin() { return {this, current(0)}; }
